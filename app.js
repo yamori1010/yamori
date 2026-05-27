@@ -344,29 +344,28 @@
   function initGallery() {
     const grid = document.getElementById('galleryGrid');
     const galleryData = [
-      { emoji: '🌸', label: 'Our First Photo Together', gradient: 'linear-gradient(135deg, #2d0f3a, #4a1942, #6b2064)', caption: 'Where it all began', subcaption: 'The first chapter' },
-      { emoji: '🌅', label: 'Sunset Adventures', gradient: 'linear-gradient(135deg, #3d1548, #5c2266, #8b3a8b)', caption: 'Golden hours together', subcaption: 'Chasing sunsets' },
-      { emoji: '💫', label: 'Starry Nights', gradient: 'linear-gradient(135deg, #1a0a2e, #2d1052, #4a1a6b)', caption: 'Under the stars', subcaption: 'Our universe' },
-      { emoji: '🎵', label: 'Our Song', gradient: 'linear-gradient(135deg, #2a0f2e, #4a2050, #6b3070)', caption: 'Music that binds us', subcaption: 'Every note is you' },
-      { emoji: '🎂', label: 'Celebrations', gradient: 'linear-gradient(135deg, #3d0f38, #5c1a52, #8b2a7a)', caption: 'Sweet moments', subcaption: 'Celebrating us' },
-      { emoji: '💕', label: 'Forever & Always', gradient: 'linear-gradient(135deg, #2d0a2a, #4a1a42, #6b2a5a)', caption: 'Endless love', subcaption: 'Our forever story' },
+      { image: 'assets/1.jpeg', caption: 'Where it all began', subcaption: 'The first chapter' },
+      { image: 'assets/2.jpeg', caption: 'Golden hours together', subcaption: 'Chasing sunsets' },
+      { image: 'assets/3.jpeg', caption: 'Under the stars', subcaption: 'Our universe' },
+      { image: 'assets/4.png', caption: 'Music that binds us', subcaption: 'Every note is you' },
+      { image: 'assets/5.jpeg', caption: 'Sweet moments', subcaption: 'Celebrating us' },
+      { image: 'assets/6.jpeg', caption: 'Endless love', subcaption: 'Our forever story' },
     ];
 
-    galleryData.forEach((item) => {
+    galleryData.forEach((item, index) => {
       const el = document.createElement('div');
       el.className = 'gallery-item';
       el.innerHTML = `
         <div class="gallery-item-inner glass-card">
-          <div class="gallery-placeholder" style="background: ${item.gradient};">
-            <div class="gallery-placeholder-content">
-              <span style="font-size: 3.5rem; display: block; margin-bottom: 12px;">${item.emoji}</span>
-              <span class="gallery-placeholder-label">${item.label}</span>
-            </div>
-          </div>
+          <img src="${item.image}" alt="${item.caption}" class="gallery-img revealed" />
+          <div class="gallery-overlay-gradient"></div>
+          <div class="gallery-vignette"></div>
           <div class="gallery-overlay">
             <span class="gallery-caption">${item.caption}</span>
             <span class="gallery-subcaption">${item.subcaption}</span>
           </div>
+          <div class="gallery-number">0${index + 1}</div>
+          <div class="gallery-heart">💖</div>
         </div>
       `;
       grid.appendChild(el);
