@@ -12,7 +12,7 @@
     sakuraCount: 20,
     loadingDuration: 3500,
     // Set your anniversary/relationship start date here for the countdown
-    loveStartDate: new Date('2024-01-01T00:00:00'),
+    loveStartDate: new Date('2025-08-26T00:00:00'),
   };
 
   // ═══════════════════════════════════════════════════════════
@@ -386,7 +386,7 @@
     try {
       audio = new Audio();
       // Placeholder: set audio.src = 'your-romantic-song.mp3' to add music
-      // audio.src = 'romantic-bg-music.mp3';
+      audio.src = 'assets/song.mp3';
       audio.loop = true;
       audio.volume = 0.3;
     } catch (e) {
